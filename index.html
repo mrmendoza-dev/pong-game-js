@@ -8,16 +8,27 @@
   <title>Pong</title>
   <link rel="icon" href="">
 </head>
-<body>
-  <div class="score">
-    <div id="player-score">0</div>
-    <div id="computer-score">0</div>
-  </div>
-  <div class="ball" id="ball"></div>
-  <div class="paddle left" id="player-paddle"></div>
-  <div class="paddle right" id="computer-paddle"></div>
 
-    <script src="script.js" type="module"></script>
+
+<body>
+
+  <div class="game-display" id="display">
+
+    <div class="score">
+      <div id="playerScore">0</div>
+      <div class="center-line"></div>
+      <div id="computerScore">0</div>
+    </div>
+
+
+    <div class="ball" id="ball"></div>
+    <div class="paddle left" id="playerPaddle"></div>
+    <div class="paddle right" id="computerPaddle"></div>
+  </div>
+
+
+  <script src="pong.js" type="module"></script>
+  <script src="Paddle.js" type="module"></script>
 
 </body>
 </html>
