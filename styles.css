@@ -10,15 +10,22 @@
 :root {
   --foreground-color: white;
   --background-color: black;
+
+  --aspect-ratio: calc(3 / 4);
   --width: 800px;
-  --height: calc(var(--width) * 3/4);
+  --height: calc(var(--width) * var(--aspect-ratio));
 }
 
 body {
   margin: 0;
-  background-color: #490249;
+  background-color: #330433;
   overflow: hidden;
   font-family: arcade;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
 }
 
 
@@ -30,28 +37,26 @@ body {
   background-color: var(--background-color);
 
   position: relative;
-    /* left: 300px; */
+  cursor: none;
 
 }
 
 .game-display:after {
-    content:"";
-    position: absolute;
-    z-index: 1;
-    top: 5%;
-    bottom: 5%;
-    left: 50%;
-    border-left: 5px dashed #fff;
-    border-right: 5px dashed #fff;
-
+  content:"";
+  position: absolute;
+  z-index: 1;
+  top: 5%;
+  bottom: 5%;
+  left: 50%;
+  border-left: 5px dashed #fff;
+  border-right: 5px dashed #fff;
 }
 
 .paddle {
   --position: 50;
-
   position: absolute;
   background-color: var(--foreground-color);
-  top: calc(var(--position) * 1vh);
+  top: calc(var(--position) * 1%);
   transform: translateY(-50%);
   width: 1.5%;
   height: 12%;
@@ -87,7 +92,9 @@ body {
   font-weight: bold;
   font-size: 4rem;
   color: var(--foreground-color);
+  user-select: none;
 }
+
 
 
 

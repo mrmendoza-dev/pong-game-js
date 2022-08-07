@@ -6,23 +6,23 @@ const playerPaddle = new Paddle(document.getElementById("playerPaddle"));
 const computerPaddle = new Paddle(document.getElementById("computerPaddle"));
 const playerScoreEl = document.getElementById("playerScore");
 const computerScoreEl = document.getElementById("computerScore");
+
 const display = document.getElementById("display");
-
-const displayWidth = display.getBoundingClientRect().width;
-const displayHeight = display.getBoundingClientRect().height;
-
+let boundary = display.getBoundingClientRect();
 
 let playerScore = 0;
 let computerScore = 0;
 
 
 
-
+function refreshBoundary() {
+  boundary = display.getBoundingClientRect();
+}
 
 
 let lastTime;
 function update(time) {
-
+  refreshBoundary();
   if (lastTime != null) {
     const delta = time - lastTime;
     ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
@@ -36,12 +36,12 @@ function update(time) {
 
 function isLose() {
   const rect = ball.rect();
-  return rect.right >= displayWidth || rect.left <= 0;
+  return rect.right >= boundary.right || rect.left <= boundary.left;
 }
 
 function handleLose() {
   const rect = ball.rect();
-  if (rect.right >= displayWidth) {
+  if (rect.right >= boundary.width) {
     playerScore += 1;
     playerScoreEl.textContent = playerScore;
   } else {
@@ -53,20 +53,16 @@ function handleLose() {
 }
 
 document.addEventListener("mousemove", (e) => {
-  playerPaddle.position = (e.y / displayHeight) * 100;
+  if (e.y <= boundary.bottom && e.y >= boundary.top) {
+    playerPaddle.position = ((e.y - boundary.top) / boundary.height) * 100;
+  }
 });
 
 window.requestAnimationFrame(update);
 
-
-
-export { displayHeight };
-
+export { boundary };
 
 
 
-
-
-
-// game only works while in top left corner
-// dont let paddle move beyond boundary
+// add start button
+// add score limit

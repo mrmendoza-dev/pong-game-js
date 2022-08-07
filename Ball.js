@@ -2,7 +2,7 @@ const INITIAL_VELOCITY = 0.025;
 const VELOCITY_INCREASE = 0.00002;
 
 
-import { displayHeight } from "./pong.js";
+import { boundary } from "./pong.js";
 
 
 export default class Ball {
@@ -51,7 +51,7 @@ export default class Ball {
     this.velocity += VELOCITY_INCREASE * delta;
     const rect = this.rect();
 
-    if (rect.bottom >= displayHeight || rect.top <= 0) {
+    if (rect.bottom >= boundary.bottom || rect.top <= boundary.top) {
       this.direction.y *= -1;
     }
 
