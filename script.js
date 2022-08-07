@@ -47,3 +47,17 @@ document.addEventListener("mousemove", (e) => {
 });
 
 window.requestAnimationFrame(update);
+
+
+
+
+
+
+
+
+
+
+// change screen to enclosed div, not window
+// add score variabvles in js
+// change background, borders
+// change font
