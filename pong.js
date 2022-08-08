@@ -57,6 +57,9 @@ function handleLose() {
     computerScore += 1;
     computerScoreEl.textContent = computerScore;
   }
+  			let sound = new Audio(`audio/pong-score.wav`);
+        sound.play();
+
   ball.reset();
   computerPaddle.reset();
 }

@@ -53,10 +53,14 @@ export default class Ball {
 
     if (rect.bottom >= boundary.bottom || rect.top <= boundary.top) {
       this.direction.y *= -1;
+      let sound = new Audio(`audio/pong-bounce.wav`);
+      sound.play();
     }
 
     if (paddleRects.some((r) => isCollision(r, rect))) {
       this.direction.x *= -1;
+      let sound = new Audio(`audio/pong-hit.wav`);
+      sound.play();
     }
   }
 }
