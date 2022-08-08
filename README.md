@@ -5,5 +5,4 @@ Modified from [Web Dev Simplified](https://www.youtube.com/watch?v=PeY6lXPrPaA&l
 
 ### TODO
 - Add sound effects
-- Edit graphics
-- Resize for arcade cainet
+- End game when score is reached, add game state (finished / in progress)
