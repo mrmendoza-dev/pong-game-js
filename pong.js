@@ -7,13 +7,22 @@ const computerPaddle = new Paddle(document.getElementById("computerPaddle"));
 const playerScoreEl = document.getElementById("playerScore");
 const computerScoreEl = document.getElementById("computerScore");
 
+const startBtn = document.getElementById("startBtn");
+
 const display = document.getElementById("display");
 let boundary = display.getBoundingClientRect();
 
 let playerScore = 0;
 let computerScore = 0;
+let scoreLimit = 11;
 
 
+startBtn.addEventListener("click", startGame)
+
+function startGame() {
+  window.requestAnimationFrame(update);
+
+}
 
 function refreshBoundary() {
   boundary = display.getBoundingClientRect();
@@ -27,14 +36,14 @@ function update(time) {
     const delta = time - lastTime;
     ball.update(delta, [playerPaddle.rect(), computerPaddle.rect()]);
     computerPaddle.update(delta, ball.y);
-    if (isLose()) handleLose();
+    if (checkLose()) handleLose();
   }
 
   lastTime = time;
   window.requestAnimationFrame(update);
 }
 
-function isLose() {
+function checkLose() {
   const rect = ball.rect();
   return rect.right >= boundary.right || rect.left <= boundary.left;
 }
@@ -58,11 +67,9 @@ document.addEventListener("mousemove", (e) => {
   }
 });
 
-window.requestAnimationFrame(update);
 
 export { boundary };
 
 
 
-// add start button
 // add score limit

@@ -23,6 +23,7 @@ body {
   font-family: arcade;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding-top: 200px;
@@ -58,16 +59,16 @@ body {
   background-color: var(--foreground-color);
   top: calc(var(--position) * 1%);
   transform: translateY(-50%);
-  width: 1.5%;
+  width: 1%;
   height: 12%;
 }
 
 .paddle.left {
-  left: 1em;
+  left: 1.5%;
 }
 
 .paddle.right {
-  right: 1em;
+  right: 1.5%;
 }
 
 .ball {
@@ -96,5 +97,20 @@ body {
 }
 
 
+.pong-start-btn {
+    font-size: 1.4rem;
+    padding: .25em .5em;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid white;
+    font-family: inherit;
+    cursor: pointer;
+    margin-top: .5em;
 
+}
+.pong-start-btn:hover {
+    color: #000;
+    background-color: #fff;
+
+}
 
