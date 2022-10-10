@@ -22,6 +22,7 @@ body {
   background-color: #280328;
   overflow: hidden;
   font-family: arcade;
+  font-size: 16px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,14 +33,11 @@ body {
 .game-display {
   aspect-ratio: 4 / 3;
   width: 600px;
-  /* height: var(--height); */
   border: 1px solid white;
   overflow: hidden;
   background-color: var(--background-color);
-
   position: relative;
   cursor: none;
-
 }
 
 .game-display:after {
