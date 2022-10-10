@@ -12,7 +12,7 @@
   --background-color: black;
 
   --aspect-ratio: calc(3 / 4);
-  --width: 600px;
+  --width: 90%;
   --height: calc(var(--width) * var(--aspect-ratio));
 }
 
@@ -30,8 +30,9 @@ body {
 
 
 .game-display {
-  width: var(--width);
-  height: var(--height);
+  aspect-ratio: 4 / 3;
+  width: 600px;
+  /* height: var(--height); */
   border: 1px solid white;
   overflow: hidden;
   background-color: var(--background-color);
@@ -112,4 +113,12 @@ body {
     background-color: #fff;
 
 }
+
+@media (min-width: 800px) {
+  .game-display {
+    width: 700px;
+  }
+}
+
+
 
