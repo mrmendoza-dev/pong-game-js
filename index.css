@@ -12,21 +12,20 @@
   --background-color: black;
 
   --aspect-ratio: calc(3 / 4);
-  --width: 800px;
+  --width: 600px;
   --height: calc(var(--width) * var(--aspect-ratio));
 }
 
 body {
-  margin: 0;
-  background-color: #330433;
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #280328;
   overflow: hidden;
   font-family: arcade;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 200px;
 }
 
 
@@ -59,7 +58,7 @@ body {
   background-color: var(--foreground-color);
   top: calc(var(--position) * 1%);
   transform: translateY(-50%);
-  width: 1%;
+  width: 1.5%;
   height: 12%;
 }
 
