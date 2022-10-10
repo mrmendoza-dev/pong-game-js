@@ -32,7 +32,7 @@ body {
 
 .game-display {
   aspect-ratio: 4 / 3;
-  width: 600px;
+  width: 400px;
   border: 1px solid white;
   overflow: hidden;
   background-color: var(--background-color);
@@ -89,7 +89,7 @@ body {
   justify-content: center;
   gap: 2em;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: 2rem;
   color: var(--foreground-color);
   user-select: none;
 }
@@ -115,6 +115,9 @@ body {
 @media (min-width: 800px) {
   .game-display {
     width: 700px;
+  }
+  .score {
+    font-size: 3rem;
   }
 }
 
